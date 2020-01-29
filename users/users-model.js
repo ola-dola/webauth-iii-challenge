@@ -1,7 +1,8 @@
 const db = require("../data/db-config");
 
-function find() {
-  return db("users");
+function findByDepartment(userDepartment) {
+  return db("users").where({ department: userDepartment})
+  
 }
 
 function findById(id) {
@@ -25,7 +26,7 @@ function insert(user) {
 }
 
 module.exports = {
-  find,
+  findByDepartment,
   findById,
   findBy,
   insert
