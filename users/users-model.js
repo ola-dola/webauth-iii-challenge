@@ -9,9 +9,9 @@ function findById(id) {
     .where({ id })
     .first();
 }
-function findBy(filter) {
+function findBy(username) {
   return db("users")
-    .where({ filter })
+    .where(username)
     .first();
 }
 
