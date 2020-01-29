@@ -19,6 +19,7 @@ router.post("/register", (req, res) => {
   if (username && password && department) {
     User.insert(userSecured)
       .then(user => {
+          user.password = undefined;  //crude removal of password from return obj. (o__0)
         res.status(201).json(user);
       })
       .catch(err => {
